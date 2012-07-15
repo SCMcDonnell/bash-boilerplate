@@ -9,7 +9,7 @@ Just copy `boilerplate.sh` to your script directory, include it:
 source boilerplate.sh
 ```
 
-and get goind.
+and get going.
 
 ### assert_num_args()
 
