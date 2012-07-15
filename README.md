@@ -3,6 +3,14 @@ Boilerplate BASH operations
 
 My toolbox of Bash boilerplate code.
 
+Just copy `boilerplate.sh` to your script directory, include it:
+
+```bash
+source boilerplate.sh
+```
+
+and get goind.
+
 ### assert_num_args()
 
 Asserts the right number of command line arguments, or exit with error.
