@@ -1,13 +1,13 @@
 Boilerplate BASH operations
 ===========================
 
-Save time and increase readability using boilerplate BASH code.
+My toolbox of Bash boilerplate code.
 
 ### assert_number_of_arguments()
 
 Asserts the right number of command line arguments, or exit with error.
 
-Usage example (`test1.sh`): 
+Example (`test1.sh`): 
 
 ```bash
 #!/bin/bash
