@@ -1,5 +1,6 @@
-Common BASH operations
-=======================
+Boilerplate BASH operations
+===========================
 
-blah
+assert_number_of_arguments()
+----------------------------
 
