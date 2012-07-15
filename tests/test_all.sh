@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-for i in 1; 
+for i in 1 2; 
 do
   printf "Testing test%d.sh      " $i  
   DIFF=`./test$i.sh | diff - test$i.out`

@@ -28,4 +28,15 @@ assert_num_args() {
 }
 
 
+exit_on_error() {
+  COMMAND=$1
+  eval "$COMMAND"
+  RETCODE=$?
+  if [ $RETCODE -eq 0 ];
+  then
+    return
+  else
+    exit $RETCODE
+  fi
+}
 
