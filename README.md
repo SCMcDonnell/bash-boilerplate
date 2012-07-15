@@ -3,7 +3,7 @@ Boilerplate BASH operations
 
 My toolbox of Bash boilerplate code.
 
-### assert_number_of_arguments()
+### assert_num_args()
 
 Asserts the right number of command line arguments, or exit with error.
 
@@ -12,7 +12,7 @@ Example (`test1.sh`):
 ```bash
 #!/bin/bash
 source boilerplate.sh
-assert_number_of_arguments 1
+assert_num_args 1
 ```
 
 ```bash

@@ -11,7 +11,7 @@ WRONG_NUMBER_OF_ARGUMENTS_ERROR=1
 #  e.g.  assert_numner_of_arguments 3
 #        assert_numner_of_arguments 0
 
-assert_number_of_arguments() {
+assert_num_args() {
   # Credit: http://www.linuxweblog.com/bash-argument-numbers-check
   EXPECTED_NUM_ARGS=$1
   if [ $NUM_ARGS -ne $EXPECTED_NUM_ARGS ]

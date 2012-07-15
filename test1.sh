@@ -2,4 +2,4 @@
 
 source boilerplate.sh
 
-assert_number_of_arguments 1  
+assert_num_args 1  
