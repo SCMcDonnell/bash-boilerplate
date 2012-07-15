@@ -23,6 +23,8 @@ source boilerplate.sh
 assert_num_args 1
 ```
 
+Running `test1.sh`:
+
 ```bash
 $ ./test1.sh
 Usage: test1.sh
