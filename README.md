@@ -50,6 +50,9 @@ Running `test2.sh`:
 $ ./test2.sh
 3
 ../boilerplate.sh: line 33: asdasdsa: command not found
+
+$ echo $?
+127
 ```
 
 
