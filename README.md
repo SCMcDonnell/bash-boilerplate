@@ -11,6 +11,15 @@ source boilerplate.sh
 
 and get going.
 
+### In short
+
+```bash
+assert_number_of_arguments EXPECTED_NUMBER
+exit_on_error "COMMAND"
+to_lower "String in quotes" RESULT_VARIABLE_NAME
+to_upper "String in quotes" RESULT_VARIABLE_NAME
+```
+
 ### assert_num_args(NUM)
 
 Asserts the right number of command line arguments, or exit with error.
