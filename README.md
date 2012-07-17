@@ -78,8 +78,24 @@ Output:
 AND NOW FOR SOMETHING COMPLETELY DIFFERENT
 ```
 
+### to_upper("String in quotes", RESULT_VARIABLE_NAME)
 
+Converts the string to UPPERCASE, and stores it in the new variable name.
 
+Example (from `test3.sh`):
+```bash
+#!/bin/bash
+source ../boilerplate.sh
+s="And Now for Something Completely Different"
+to_lower "$s" l
+echo $l
+```
+
+Output:
+
+```bash
+and now for something completely different
+```
 
 
 
