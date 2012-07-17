@@ -23,7 +23,7 @@ source boilerplate.sh
 assert_num_args 1
 ```
 
-Running `test1.sh`:
+Output:
 
 ```bash
 $ ./test1.sh
@@ -44,7 +44,8 @@ exit_on_error 'echo "1+2" | bc'
 exit_on_error 'asdasdsa asa sgfh jyh' 2>&1
 echo "You should never see this line"
 ```
-Running `test2.sh`:
+
+Output:
 
 ```bash
 $ ./test2.sh
@@ -56,6 +57,28 @@ Verify the return value of `test2.sh`:
 $ echo $?
 127
 ```
+
+
+### to_lower("String in quotes", RESULT_VARIABLE_NAME)
+
+Converts the string to lowercase, and stores it in the new variable name.
+
+Example (from `test3.sh`):
+```bash
+#!/bin/bash
+source ../boilerplate.sh
+s="And Now for Something Completely Different"
+to_lower "$s" l
+echo $l
+```
+
+Output:
+
+```bash
+AND NOW FOR SOMETHING COMPLETELY DIFFERENT
+```
+
+
 
 
 
