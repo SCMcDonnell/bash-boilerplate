@@ -20,6 +20,8 @@ to_lower "String in quotes" RESULT_VARIABLE_NAME
 to_upper "String in quotes" RESULT_VARIABLE_NAME
 ```
 
+## Functions
+
 ### assert_num_args(NUM)
 
 Asserts the right number of command line arguments, or exit with error.
