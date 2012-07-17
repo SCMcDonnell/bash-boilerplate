@@ -7,6 +7,9 @@ WRONG_NUMBER_OF_ARGUMENTS_ERROR=1
 
 ################################## Functions ###################################
 
+
+
+###################### Assert number of command line args ######################
 # Usage: assert_number_of_arguments EXPECTED_NUMBER
 #  e.g.  assert_numner_of_arguments 3
 #        assert_numner_of_arguments 0
@@ -27,6 +30,10 @@ assert_num_args() {
   fi
 }
 
+########################## Run command, exit on error ##########################
+# Usage: exit_on_error "COMMAND"
+# e.g. : exit_on_error "ls"
+#        exit_on_error 'echo "1+2" | bc'
 
 exit_on_error() {
   COMMAND=$1
@@ -40,3 +47,24 @@ exit_on_error() {
   fi
 }
 
+######################### Convert string to lower case #########################
+# Usage: to_lower "String in quotes" RESULT_VARIABLE_NAME
+# e.g. : to_lower "Cheese shop" l1
+#        echo $l1  # "cheese shop"
+
+function to_lower()
+{
+  local  __resultvar=$2
+  eval $__resultvar=$(echo "'$1'" | tr '[A-Z]' '[a-z]' )
+}
+
+######################### Convert string to UPPER case #########################
+# Usage: to_upper "String in quotes" RESULT_VARIABLE_NAME
+# e.g. : to_upper "Cheese shop" l1
+#        echo $l1  # "CHEESE SHOP"
+
+function to_upper()
+{
+  local  __resultvar=$2
+  eval $__resultvar=$(echo "'$1'" | tr '[a-z]' '[A-Z]' )
+}

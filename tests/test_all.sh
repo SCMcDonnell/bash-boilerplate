@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-for i in 1 2; 
+for i in 1 2 3; 
 do
   printf "Testing test%d.sh      " $i  
-  DIFF=`./test$i.sh | diff - test$i.out`
+  DIFF=`./test$i.sh 2>&1 | diff - test$i.out`
   if [ -z "$DIFF" ];
   then
     echo "OK"
