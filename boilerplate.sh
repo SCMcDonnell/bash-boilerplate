@@ -68,3 +68,29 @@ function to_upper()
   local  __resultvar=$2
   eval $__resultvar=$(echo "'$1'" | tr '[a-z]' '[A-Z]' )
 }
+
+
+################################## Debug echo ##################################
+# Conditionally echos a message:
+# If $DEBUG_SHELL is "true", "yes", "on" or "1", displayes the message.
+# If $DEBUG_LOG_FILE is defined, appends echo to the file (regardless of 
+# $DEBUG_SHELL)
+#
+# Usage: decho <echo-args>
+# e.g. : decho -n "*"
+#        decho "`date`"
+
+function decho()
+{
+  local __decho_msg="$@"
+  local __debug_status
+  to_lower "$DEBUG_SHELL" __debug_status
+  if [[ "$__debug_status" == "true" ]] || [[ "$__debug_status" == "yes" ]] || [[ "$__debug_status" == "on" ]] || [[ "$__debug_status" == "1" ]];
+  then
+    eval "echo $__decho_msg"
+  fi
+  if [ ! -z "$DEBUG_LOG_FILE" ];
+  then
+    eval "echo $__decho_msg" >> $DEBUG_LOG_FILE
+  fi
+}
