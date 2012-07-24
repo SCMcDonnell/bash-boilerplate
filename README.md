@@ -110,12 +110,12 @@ and now for something completely different
 ```
 
 
-### decho(MESSAGE)
+### decho("MESSAGE")
 
 `decho` stands for `debug echo`: Prints and echos MESSAGE according to debug flags.
 
-  * echos $MESSAGE if $DEBUG_SHELL is either "true", "yes", "on" or "1".
-  * appends $MESSAGE to the filename $DEBUG_LOG_FILE, if $DEBUG_LOG_FILE is not empty.
+  * echos `$MESSAGE` if `$DEBUG_SHELL` is either `true`, `yes`, `on` or `1`.
+  * appends `$MESSAGE` to the filename `$DEBUG_LOG_FILE`, if `$DEBUG_LOG_FILE` is not empty.
 
 Example (from `test4.sh`):
 ```bash
