@@ -18,6 +18,7 @@ assert_number_of_arguments EXPECTED_NUMBER
 exit_on_error "COMMAND"
 to_lower "String in quotes" RESULT_VARIABLE_NAME
 to_upper "String in quotes" RESULT_VARIABLE_NAME
+decho "message"
 ```
 
 ## Functions
@@ -106,6 +107,40 @@ Output:
 
 ```bash
 and now for something completely different
+```
+
+
+### decho(MESSAGE)
+
+`decho` stands for `debug echo`: Prints and echos MESSAGE according to debug flags.
+
+  * echos $MESSAGE if $DEBUG_SHELL is either "true", "yes", "on" or "1".
+  * appends $MESSAGE to the filename $DEBUG_LOG_FILE, if $DEBUG_LOG_FILE is not empty.
+
+Example (from `test4.sh`):
+```bash
+#!/bin/bash
+# Write to stdout and log file.
+DEBUG_LOG_FILE="test_log_file"
+DEBUG_SHELL="Yes"
+decho "Screen and file."
+
+# Write to stdout only.
+DEBUG_LOG_FILE=""
+DEBUG_SHELL="1"
+decho "Screen only."
+```
+
+Output - stdout:
+
+```bash
+Screen only.
+```
+
+Output - `test_log_file`:
+```bash
+$ echo test_log_file
+File only.
 ```
 
 
