@@ -144,4 +144,10 @@ File only.
 ```
 
 
+### TODO
 
+  * Better test suite: 
+   * Automatic (Runs with a single commmand)
+   * Readable.
+  * Add MIN, MAX optional arguments to assert_number_of_arguments
+  * Support echo arguments (e.g. `-n`) in decho
