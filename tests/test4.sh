@@ -2,10 +2,10 @@
 
 source ../boilerplate.sh
 
-rm -f test_log_file
+rm -f test4_current.log
 
 # Write to stdout and log file.
-DEBUG_LOG_FILE="test_log_file"
+DEBUG_LOG_FILE="test4_current.log"
 DEBUG_SHELL="Yes"
 decho "Screen and file."
 
