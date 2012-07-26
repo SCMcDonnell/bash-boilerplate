@@ -12,41 +12,41 @@ function write_diff_result() {
 
 function test_and_compare () {
   number=$1
-  test_script=$2
-  test_output=$3
-  if [ -f "$test_script" ]; then
-    printf "test %04d: Running %s... " $number $test_script
-    DIFF=`./$test_script 2>&1 | diff - $test_output 2>&1`
-    printf "Done.\t\t(output == %s) ?                   " $test_output
+  unit_script=$2
+  unit_output=$3
+  if [ -f "$unit_script" ]; then
+    printf "unit %04d: Running %s... " $number $unit_script
+    DIFF=`./$unit_script 2>&1 | diff - $unit_output 2>&1`
+    printf "Done.\t\t(output == %s) ?                   " $unit_output
     write_diff_result "$DIFF"
   fi 
 }
 
 function test_and_compare_file() {
   number=$1
-  test_script=$2
-  test_log=$3
-  current_test_log="test"$number"_current.log"
-  if [ -f "$test_log" ]; then
-	rm $current_test_log
-	eval "./$test_script" 2>&1 > /dev/null
-    printf "test %04d: Running test%04d.sh... " $number $number
-	diff test"$number"_current.log test$number.log 2>&1
-    DIFF=`diff test"$number"_current.log test$number.log 2>&1`
-    printf "Done.\t\t(test%04d_current.log == test%04d.log) ?     " $number $number
+  unit_script=$2
+  unit_log=$3
+  current_unit_log="unit"$number"_current.log"
+  if [ -f "$unit_log" ]; then
+	rm $current_unit_log
+	eval "./$unit_script" 2>&1 > /dev/null
+    printf "unit %04d: Running unit%04d.sh... " $number $number
+	diff unit"$number"_current.log unit$number.log 2>&1
+    DIFF=`diff unit"$number"_current.log unit$number.log 2>&1`
+    printf "Done.\t\t(unit%04d_current.log == unit%04d.log) ?     " $number $number
     write_diff_result "$DIFF" 
   fi
 }
   
 function test_full() {
   number=$1
-  test_script="test$number.sh"
-  test_output="test$number.out"
-  test_log="test$number.log"
+  unit_script="unit$number.sh"
+  unit_output="unit$number.out"
+  unit_log="unit$number.log"
 
-  test_and_compare $number $test_script $test_output
-  if [ -f $test_log ]; then
-	  test_and_compare_file $number $test_script $test_log
+  test_and_compare $number $unit_script $unit_output
+  if [ -f $unit_log ]; then
+	  test_and_compare_file $number $unit_script $unit_log
   fi
 }
 
