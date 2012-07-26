@@ -83,7 +83,6 @@ function to_upper()
 function decho()
 {
   local __decho_msg="$@"
-  local __debug_status
   to_lower "$DEBUG_SHELL" __debug_status
   if [[ "$__debug_status" == "true" ]] || [[ "$__debug_status" == "yes" ]] || [[ "$__debug_status" == "on" ]] || [[ "$__debug_status" == "1" ]];
   then

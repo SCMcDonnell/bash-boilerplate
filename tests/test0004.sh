@@ -2,10 +2,8 @@
 
 source ../boilerplate.sh
 
-rm -f test4_current.log
-
 # Write to stdout and log file.
-DEBUG_LOG_FILE="test4_current.log"
+DEBUG_LOG_FILE="test0004_current.log"
 DEBUG_SHELL="Yes"
 decho "Screen and file."
 
@@ -15,7 +13,7 @@ DEBUG_SHELL="1"
 decho "Screen only."
 
 # Write to log file only.
-DEBUG_LOG_FILE="test_log_file"
+DEBUG_LOG_FILE="test0004_current.log"
 DEBUG_SHELL="Off"
 decho "File only."
 
